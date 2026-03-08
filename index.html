@@ -1,28 +1,184 @@
 <!DOCTYPE html>
-<html>
-<head><title>DevNotes Privacy Policy</title></head>
-<body style="font-family:sans-serif;max-width:700px;margin:40px auto;padding:0 20px">
-  <h1>DevNotes Privacy Policy</h1>
-  <p>Last updated: 08.03.2026</p>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | DevNotes</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-dim: #94a3b8;
+            --accent-2: #38bdf8;
+            --green: #22c55e;
+            --border: #334155;
+        }
 
-  <h2>Data We Collect</h2>
-  <p>DevNotes stores your notes and categories locally in your browser using Chrome's storage API. 
-  If you enable Google Drive sync, your notes are backed up to a single file in your own Google Drive account.</p>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <h2>Data We Do Not Collect</h2>
-  <p>We do not collect, transmit, or store any personal data on our servers. 
-  All data remains on your device or in your own Google Drive account.</p>
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
 
-  <h2>Google OAuth</h2>
-  <p>DevNotes uses Google OAuth solely to authenticate you and access your Google Drive 
-  for backup purposes. We request only the drive.file scope, which limits access 
-  to files created by DevNotes only.</p>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-  <h2>Third Party Services</h2>
-  <p>We use Google Drive API for optional cloud backup. 
-  Google's privacy policy applies to that data: https://policies.google.com/privacy</p>
+        /* Branding Section */
+        .header {
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+        }
 
-  <h2>Contact</h2>
-  <p>Questions? Email: <a href="mailto:ashishkurzekar.ak@gmail.com">ashishkurzekar.ak@gmail.com</a></p>
+        .header-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .app-name {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -1.2px;
+            color: var(--text);
+            line-height: 1;
+        }
+
+        .app-name span {
+            background: linear-gradient(135deg, var(--accent-2), var(--green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .policy-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-2);
+            font-weight: 600;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        /* Content Sections */
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        section:hover {
+            border-color: var(--accent-2);
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--accent-2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Decorative icon bullet for H2 */
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+        }
+
+        p {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        a {
+            color: var(--accent-2);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid var(--accent-2);
+            opacity: 0.8;
+        }
+
+        .contact-box {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(34, 197, 94, 0.1));
+            border-radius: 12px;
+            border: 1px dashed var(--border);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 20px 15px; }
+            .app-name { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <div class="header-text">
+            <h1 class="app-name">Dev<span>Notes</span></h1>
+            <span class="policy-title">Privacy Policy</span>
+        </div>
+        <p class="last-updated">Effective Date: 08.03.2026</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Data We Collect</h2>
+            <p>DevNotes is built with privacy-first architecture. We store your notes and categories locally in your browser using <strong>Chrome's storage API</strong>. If you enable Google Drive sync, your data is backed up exclusively to your private storage.</p>
+        </section>
+
+        <section>
+            <h2>Data We Do Not Collect</h2>
+            <p>Your data belongs to you. We do not collect, transmit, or store any personal data on our servers. All information remains isolated on your device or within your personal Google Drive account.</p>
+        </section>
+
+        <section>
+            <h2>Google OAuth & Security</h2>
+            <p>We use Google OAuth solely for authentication and secure backup. DevNotes requests only the <code>drive.file</code> scope, ensuring we can only access files created specifically by this application.</p>
+        </section>
+
+        <section>
+            <h2>Third Party Services</h2>
+            <p>Cloud backups are powered by the Google Drive API. Please note that <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a> applies to data stored within their infrastructure.</p>
+        </section>
+
+        <div class="contact-box">
+            <p style="color: var(--text); margin-bottom: 8px;">Have questions about your data?</p>
+            <a href="mailto:ashishkurzekar.ak@gmail.com" style="font-weight: 600;">ashishkurzekar.ak@gmail.com</a>
+        </div>
+    </main>
+</div>
+
 </body>
 </html>
